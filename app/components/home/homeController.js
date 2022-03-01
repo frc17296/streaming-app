@@ -5,11 +5,8 @@ app.controller("homeController", ["$scope", "dataService", "filmService", "$loca
             $scope.films = data
         });
             
-        $scope.watch = function(title) {
-            let source = filmService.getFilmSrc(title);
-            if(source) {            
-                $location.url('/watch/'+title);
-            }
+        $scope.detail = function(title) {           
+            $location.url('/detail/'+title);
         }
 
         $scope.addFavorite = function(title) {

@@ -1,18 +1,4 @@
 app.service('loginService', ['$rootScope', '$cookieStore', '$location', 'userService',  function($rootScope, $cookieStore, $location, userService) {
-    const users = [{
-        id:1,
-        nickname: 'Test',
-        email: 'test@gmail.com',
-        password: '1234',
-        list: [
-            {
-                title: "Howl's moving castle"
-            },
-            {
-                title: "Porco rosso"
-            }
-        ]
-    }];
 
     this.isAuthenticated = function() {
         var credentials = localStorage.getItem("user");

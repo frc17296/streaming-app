@@ -7,6 +7,7 @@ html {
     background-color: #fff;
     color: gray;
     margin: 0 auto;
+    font-size: 16px;
 }
 
 #backgroundImgContainer {
@@ -19,3 +20,8 @@ html {
     background-position: center;
     background-repeat: no-repeat;
 }
+
+input[type=email], input[type=password] {
+    font-size: 1em;
+}
+

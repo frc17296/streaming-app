@@ -2,7 +2,7 @@ app.service('userService', ['$rootScope', function($rootScope) {
     this.users = [{
         id:1,
         nickname: 'Test',
-        email: 'test@gmail.com',
+        email: 'test@test.com',
         password: '1234',
         favorites: [
             {

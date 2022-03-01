@@ -1,25 +1,25 @@
 <main>
   <div id="backgroundImgContainer">
     <div id="loginFormContainer" class="container p-5 border">
-      <h4 class="text-center mx-5 mb-5 p-2">Login</h4>
-        <form ng-submit="login()" name="loginForm" id="loginForm">
+      <h1 class="text-center mx-5 mb-5 p-2">Login</h1>
+        <form ng-submit="login()" name="loginForm" id="loginForm" class="px-3">
           <div class="row mb-5">
-            <label for="inputUsername" class="col-sm-2 col-form-label">Email</label>
-            <div class="col-sm-10">
+            <label for="inputUsername" class="w-100">Email</label>
+            <div class="w-100">
               <input type="email" class="form-control" id="inputUsername" ng-model="formLoginInputs.email" required>
             </div>
           </div>
           <div class="row mb-3">
-            <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-            <div class="col-sm-10">
-              <input type="password" class="form-control" id="inputPassword" ng-model="formLoginInputs.password" required>
+            <label for="inputPassword" class="w-100">Password</label>
+            <div class="w-100">
+              <input type="password" class="form-control w-100" id="inputPassword" ng-model="formLoginInputs.password" required>
             </div>
           </div>
           
           <div class="row mb-5">
-            <div class="col-sm-10 offset-sm-2">
+            <div class="mx-auto">
               <div class="form-check p-0 d-flex align-items-center">
-                <input class="form-check-input" type="checkbox" id="checkbox" ng-model="keepSigned" unchecked>
+                <input class="form-check-input" type="checkbox" id="checkbox" ng-model="keepSigned" />
                 <label class="form-check-label ml-5" for="checkbox">
                   <span class="lead">Keep me signed</span>
                 </label>

@@ -9,9 +9,9 @@ app.config(function($routeProvider) {
 			templateUrl: 'app/components/login/login.component.html',
 			controller: 'loginController'
 		})
-		.when('/watch/:title', {
-			templateUrl: 'app/components/watch/watch.component.html',
-			controller: 'watchController'
+		.when('/detail/:title', {
+			templateUrl: 'app/components/detail/detail.component.html',
+			controller: 'detailController'
 		})
 		.when('/list', {
 			templateUrl: 'app/components/list/list.component.html',
