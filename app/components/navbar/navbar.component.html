@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background-color: #e3f2fd;">
+    <a class="navbar-brand d-flex align-items-center" href="#!/">
+        Studio Ghibli Films
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#!/">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#!/list">My List</a>
+          </li>
+        </ul>
+        <form name="searchForm" id="searchForm" ng-submit="handleSubmit()" class="form-inline my-2 my-lg-0">
+          <input id="searchInput" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" ng-model="searchValue.title" ng-bind="searchFunction(searchValue)">
+          <i class="icon fas fa-search" style="font-size: 16px;" aria-hidden="true" ng-click="toggleSearchInput()"></i>
+        </form>
+    </div>
+    <div class="dropdown">
+      <div class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {{currentUser.nickname}}
+      </div>
+      <ul class="dropdown-menu" aria-labelledby="about-us">
+        <li><a>Settings</a></li>
+        <li><a ng-click="logout()">Logout</a></li>
+      </ul>
+      </div>
+    
+</nav>

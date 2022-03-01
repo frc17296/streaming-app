@@ -1,0 +1,9 @@
+<header>
+    <div ng-include="'./app/components/navbar/navbar.component.html'" ng-controller="navbarController" >
+</header>
+<main>
+    <h4 class="m-5">My list</h4>
+    <div ng-repeat="film in currentUser.favorites" class="container">
+        {{film.title}}
+    </div>
+</main>

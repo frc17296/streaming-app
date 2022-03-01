@@ -1,0 +1,60 @@
+nav {
+    height: 100px;
+    position: sticky!important    
+}
+
+.nav-link {
+    font-size: 14px;
+}
+
+.navbar-brand {
+    font-size: 20px;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.dropdown-menu {
+    left: -50px;
+}
+
+.dropdown-menu > li > a {
+    cursor: pointer;
+    font-size: 12px;
+}
+
+#searchForm.search {
+    background: #fff;
+    border: 1px solid #ced4da;
+}
+
+#searchInput {
+    display: none;
+    border: none;
+    font-size: 16px;
+}
+
+#searchInput.show {
+    animation-name: slideLeft;
+    animation-duration: 1s;
+    animation-delay: 0s;
+}
+
+.icon {
+    margin: 0 5px;
+    color: #495057;
+    cursor: pointer;
+}
+
+
+@keyframes slideLeft {
+    from {
+        transform: translateX(10px);
+    }
+    to {
+        transform: translateX(0px);
+    }
+}
+

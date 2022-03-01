@@ -1,0 +1,36 @@
+<main>
+  <div id="backgroundImgContainer">
+    <div id="loginFormContainer" class="container p-5 border">
+      <h4 class="text-center mx-5 mb-5 p-2">Login</h4>
+        <form ng-submit="login()" name="loginForm" id="loginForm">
+          <div class="row mb-5">
+            <label for="inputUsername" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" id="inputUsername" ng-model="formLoginInputs.email" required>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+            <div class="col-sm-10">
+              <input type="password" class="form-control" id="inputPassword" ng-model="formLoginInputs.password" required>
+            </div>
+          </div>
+          
+          <div class="row mb-5">
+            <div class="col-sm-10 offset-sm-2">
+              <div class="form-check p-0 d-flex align-items-center">
+                <input class="form-check-input" type="checkbox" id="checkbox" ng-model="keepSigned" unchecked>
+                <label class="form-check-label ml-5" for="checkbox">
+                  <span class="lead">Keep me signed</span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <p class="lead text-danger text-center" ng-if="wrongCredentials">{{errorMsg}}</p>
+          <div class="text-center mt-5 pt-5 pb-4">
+            <button type="submit" class="btn btn-primary p-3"><span class="p-2" style="font-size: 12px;">Sign in</span></button>
+          </div>
+        </form>
+    </div>
+  </div>
+</main>
