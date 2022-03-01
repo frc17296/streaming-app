@@ -1,9 +1,10 @@
 <header>
-  <div ng-include="'./app/components/navbar/navbar.component.html'" ng-controller="navbarController" >
+  <div ng-include="'./app/components/navbar/navbar.component.html'" ng-controller="navbarController">
 </header>
 <main>
   <div class="container mt-5">
-    <div ng-repeat="film in films | filter: searchInput" class="film-card row mt-5 justify-content-center">
+      <div ng-include="'app/components/carousel/carousel.component.html'" ng-controller="carouselCtrl">      
+      <div ng-repeat="film in films | filter: searchInput" class="film-card row mt-5 justify-content-center">
       <div class="image col col-sm-2 col-md-3">
         <img ng-src="{{film.image}}" alt="{{film.title}}" />
       </div>

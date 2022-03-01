@@ -1,0 +1,27 @@
+.slider {
+  display: flex;
+  align-items: center;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+}
+
+.image > img {
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  transform: translateX(-200px);  
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX();
+  }
+  to {
+    transform: translateX(-200px);
+  }
+}

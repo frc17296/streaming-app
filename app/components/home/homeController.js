@@ -1,9 +1,12 @@
-app.controller("homeController", ["$scope", "dataService", "filmService", "$location", "userService",
-    function($scope, dataService, filmService, $location, userService){
-        $scope.title = "Studio Gibli Films";  
-        this.getFilms = dataService.data.then(data => {
-            $scope.films = data
-        });
+app.controller("homeController", ["$rootScope", "$scope", "dataService", "filmService", "$location", "userService",
+    function($rootScope, $scope, dataService, filmService, $location, userService){
+        $scope.title = "Studio Gibli Films"; 
+        
+        // this.getFilms = dataService.data.then(data => {
+        //     //$rootScope.films = data;
+        //     this.films = data;
+        //     console.log(this.films);
+        // });
             
         $scope.detail = function(title) {           
             $location.url('/detail/'+title);
