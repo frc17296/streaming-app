@@ -417,19 +417,6 @@
       "$$hashKey": "object:36"
   },
   {
-      "imageurl": [],
-      "genre": [
-          "Action"
-      ],
-      "imdbid": "tt11958194",
-      "title": "Liverpool vs Atletico Madrid",
-      "imdbrating": 6.8,
-      "released": 2020,
-      "type": "movie",
-      "synopsis": "",
-      "$$hashKey": "object:37"
-  },
-  {
       "imageurl": [
           "https://m.media-amazon.com/images/M/MV5BZDBiZGQ0YjgtNzY1Mi00MTNiLThjODktMjBhMDA4OGQ5M2YwXkEyXkFqcGdeQXVyNjA0MDQ1NTc@._V1_UX182_CR0,0,182,268_AL_.jpg"
       ],
@@ -636,20 +623,6 @@
       "type": "movie",
       "synopsis": "Detective Mason Jones aka Detective MJ, is a Washington DC homicide detective, who is caught in between a homicide case and a war between two gangsters that run the Washington DC underground scene.",
       "$$hashKey": "object:50"
-  },
-  {
-      "imageurl": [],
-      "genre": [
-          "Action",
-          "Drama"
-      ],
-      "imdbid": "tt10558706",
-      "title": "Commandos: The Mission",
-      "imdbrating": 6.3,
-      "released": 2020,
-      "type": "movie",
-      "synopsis": "Six Dutch Commandos, commanded by John de Koning and stationed in Mali, are sent to Nigeria under American orders to free the son of a wealthy Nigerian oil family from Boko Haram rebels. ...",
-      "$$hashKey": "object:51"
   },
   {
       "imageurl": [

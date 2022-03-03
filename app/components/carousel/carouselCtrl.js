@@ -1,5 +1,6 @@
 app.controller('carouselCtrl', ['dataService', '$scope', '$rootScope', function() {
   this.movement;
+  this.sliderMargin = 40;
   angular.element(document).ready(function() {    
     const sliderObj = angular.element(document.querySelectorAll('.slider')); 
     const sliders = Object.values(sliderObj);
@@ -15,23 +16,51 @@ app.controller('carouselCtrl', ['dataService', '$scope', '$rootScope', function(
       const slideLeftBtn = angular.element(carousel.querySelector('.left'));  
       const slideRightBtn = angular.element(carousel.querySelector('.right')); 
 
-      const canScroll = this.canSliderScroll(slider, items);      
+      let measures;
       slideLeftBtn[0].onclick = () => {
-        if(canScroll) {
-          slider.style.transform = `translate(${this.calcTranslation('left', slider)}px)`;       
+        measures = this.calcSliderMeasures(slider, items);
+        if(this.canScroll(measures, 'left')) {
+          slider.style.transform = `translate(${this.calcTranslation('right', slider)}px)`;       
         }
       };
       slideRightBtn[0].onclick = () => {
-        if(canScroll) {
-          slider.style.transform = `translate(${this.calcTranslation('right', slider)}px)`;       
+        measures = this.calcSliderMeasures(slider, items);
+        if(this.canScroll(measures, 'right')) {
+          slider.style.transform = `translate(${this.calcTranslation('left', slider)}px)`;       
         }
       };
     });
   });  
 
-  canSliderScroll = (slider, items) => {
+  canScroll = (measures, direction) => {
+    let xOffset = measures.xOffset > 0 ? measures.xOffset : measures.xOffset * (-1);        
+
+    switch(direction) {
+      case 'left': {   
+        if(measures.xOffset >= 40) {
+          return false;
+        }
+        if((xOffset - this.movement) < 0) {
+          this.movement = (xOffset + 40);
+          return true;
+        }
+        return (measures.xOffset + this.movement) <= 40;
+      }
+      case 'right': {
+        let diff = (measures.maxXOffset - xOffset - this.sliderMargin);
+        if( diff < this.movement && diff > 0) {
+          this.movement = diff;
+        } else if (diff < this.movement && diff < 0) {
+          this.movement = measures.maxXOffset;
+        }
+        return (measures.maxXOffset - xOffset) > 0;
+      }
+    }
+  }
+
+  calcSliderMeasures = (slider, items) => {
     // visible area of the slider
-    const sliderVisibleWidth = slider.offsetWidth;
+    const sliderVisibleWidth = slider.offsetWidth;    
     this.movement = sliderVisibleWidth;
 
     // total width of all items    
@@ -40,16 +69,19 @@ app.controller('carouselCtrl', ['dataService', '$scope', '$rootScope', function(
     const totalItemsWidth = right - left;
     
     // maximum distance carousel should be allowed to scroll
-    const minXOffset = - (totalItemsWidth - sliderVisibleWidth);
+    const maxXOffset = (totalItemsWidth - sliderVisibleWidth);
 
     // while difference between the actual x position and the max allowed movement is greater then 0
     // i can move
-    return ((slider.getBoundingClientRect().x - minXOffset) > 0);
+    //return ((slider.getBoundingClientRect().x - minXOffset) > 0);
+    return {
+      xOffset: slider.getBoundingClientRect().x,
+      maxXOffset : maxXOffset 
+    }
   };
 
   leftMove = (transform) => {
-    let splitted;
-    splitted = transform.split("(-");
+    let splitted = transform.split("(-");
     if(splitted.length>1) { 
       splitted = splitted[1].split("px)");
       let value = splitted[0];
@@ -59,7 +91,7 @@ app.controller('carouselCtrl', ['dataService', '$scope', '$rootScope', function(
       splitted = splitted[1].split("px)");
       let value = splitted[0];
       value = Number(value) - this.movement;
-      return value > 0 ? "+" + value : String(value);
+      return value < 0 ? value : String(- value);
     }
   };
 
@@ -85,7 +117,7 @@ app.controller('carouselCtrl', ['dataService', '$scope', '$rootScope', function(
       let value;
       switch(direction) {
         case 'left': {
-          value = leftMove(transform);            
+          value = leftMove(transform); 
           return value;
         }
         case 'right': {
@@ -96,7 +128,7 @@ app.controller('carouselCtrl', ['dataService', '$scope', '$rootScope', function(
     } else if(direction === 'left') {
       return "-" + this.movement;
     } else {
-      return "+" + this.movement;
+      return this.movement;
     }      
   };
     
