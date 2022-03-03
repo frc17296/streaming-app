@@ -3,25 +3,18 @@
   align-items: center;
 }
 
+.item {
+  flex-shrink: 0;
+  height: 200px;
+  margin-right: 15px;
+}
+
 .image {
-  width: 100%;
-  height: 100%;
+width: 100%;
+height: 100%;
 }
 
 .image > img {
-  width: 100%;
-  height: 100%;
-}
-
-.slide {
-  transform: translateX(-200px);  
-}
-
-@keyframes slideLeft {
-  from {
-    transform: translateX();
-  }
-  to {
-    transform: translateX(-200px);
-  }
+width: 100%;
+height: 100%;
 }

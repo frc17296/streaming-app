@@ -1,11 +1,5 @@
-app.controller('carouselCtrl', ['dataService', '$scope', function(dataService, $scope) {
-  this.$onInit = () => {    
-    dataService.data.then(data => {
-      $scope.films = data;
-    });
-  }
-
-  angular.element(document).ready(function() {
+app.controller('carouselCtrl', ['dataService', '$scope', '$rootScope', function($rootScope) {
+  angular.element(document).ready(function() {    
     const slider = angular.element(document.querySelector('.slider'));   
     const slideLeftBtn = angular.element(document.querySelector('#left'));  
     const slideRightBtn = angular.element(document.querySelector('#right'));      

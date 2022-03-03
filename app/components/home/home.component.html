@@ -3,66 +3,16 @@
 </header>
 <main>
   <div class="container mt-5">
-      <div ng-include="'app/components/carousel/carousel.component.html'" ng-controller="carouselCtrl">      
-      <div ng-repeat="film in films | filter: searchInput" class="film-card row mt-5 justify-content-center">
-      <div class="image col col-sm-2 col-md-3">
-        <img ng-src="{{film.image}}" alt="{{film.title}}" />
-      </div>
-      <div class="card-info-controls col col-sm col-md-5">
-        <div class="info h-50">
-          <h4 class="title">{{film.title}}</h4>
-          <div class="description">
-            {{film.description | textLengthFilter}}
+    <div ng-repeat="el in filmsByGenre" ng-controller="carouselCtrl">
+      <h3>{{el.genre}}</h3>      
+      <div class="slider">
+        <div ng-repeat="(key, film) in el.list" class="item">
+          <div class="image">
+            <img ng-src="{{film.imageurl[0]}}" alt="{{film.title}}" />
           </div>
         </div>
-        <div class="buttons text-center mt-5 p-5">
-          <button class="btn w-20 p-3" ng-click="detail(film.title)">Detail</button> 
-          <button class="btn w-20 p-3" ng-click="addFavorite(film.title)">Add Favorite</button>
-          <button class="btn w-20 p-3 dropdown" role="button" id="voteButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Vote
-          </button>
-          <div class="dropdown-menu" aria-labelledby="voteButton">
-            <div class="p-3">
-              <span ng-mouseleave="emptyAllRatingIcon($event)">
-                  <i 
-                    class="far fa-star rating-star" 
-                    style="cursor: pointer;"
-                    ng-mouseenter="fillRatingIcon($event)" 
-                    ng-mouseleave="emptyRatingIcon($event)"
-                    ng-click="calcRating(title,$event)">
-                  </i>
-                  <i 
-                    class="far fa-star rating-star"
-                    ng-mouseenter="fillRatingIcon($event)" 
-                    ng-mouseleave="emptyRatingIcon($event)"
-                    ng-click="calcRating(title,$event)">
-                  </i>
-                  <i 
-                    class="far fa-star rating-star" 
-                    style="cursor: pointer;"
-                    ng-mouseenter="fillRatingIcon($event)" 
-                    ng-mouseleave="emptyRatingIcon($event)"
-                    ng-click="calcRating(title,$event)">
-                  </i>
-                  <i 
-                    class="far fa-star rating-star" 
-                    style="cursor: pointer;"
-                    ng-mouseenter="fillRatingIcon($event)" 
-                    ng-mouseleave="emptyRatingIcon($event)"
-                    ng-click="calcRating(title,$event)">
-                  </i>
-                  <i 
-                    class="far fa-star rating-star" 
-                    style="cursor: pointer;"
-                    ng-mouseenter="fillRatingIcon($event)" 
-                    ng-mouseleave="emptyRatingIcon($event)"
-                    ng-click="calcRating(title,$event)">
-                  </i>
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+      <button id="left">left</button>
+      <button id="right">right</button>
+    </div>    
   </div>
 </main>

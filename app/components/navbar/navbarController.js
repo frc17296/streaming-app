@@ -1,5 +1,5 @@
 app.controller('navbarController', ['$scope', '$rootScope', 'loginService', function($scope, $rootScope, loginService) {
-    
+    $scope.appTitle = "Streaming app";
     $scope.currentUser = $rootScope.currentUser;
     $scope.searchFunction = function(value) {
         $rootScope.searchInput = value;

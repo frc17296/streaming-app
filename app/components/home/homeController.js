@@ -1,16 +1,17 @@
-app.controller("homeController", ["$rootScope", "$scope", "dataService", "filmService", "$location", "userService",
+app.controller("homeController", 
+    ["$rootScope", "$scope", "dataService", "filmService", "$location", "userService", "$filter",
     function($rootScope, $scope, dataService, filmService, $location, userService){
-        $scope.title = "Studio Gibli Films"; 
+        angular.element(document).ready(function() {
+            dataService.getData();
+        });                  
         
-        // this.getFilms = dataService.data.then(data => {
-        //     //$rootScope.films = data;
-        //     this.films = data;
-        //     console.log(this.films);
-        // });
-            
         $scope.detail = function(title) {           
             $location.url('/detail/'+title);
         }
+
+        $scope.getFilmsByGenre = (g) => {
+           return dataService.getFilmsByGenre(g);
+        }        
 
         $scope.addFavorite = function(title) {
             console.log('adding : ' + title + ' to favorite')
