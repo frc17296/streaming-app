@@ -1,3 +1,17 @@
+.films-cnt {
+  margin: 40px;
+}
+
+.carousel-cnt {  
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.carousel-cnt > h3 {
+  height: 25px;
+  box-sizing: border-box;
+}
+
 .slider {
   display: flex;
   align-items: center;
@@ -10,11 +24,29 @@
 }
 
 .image {
-width: 100%;
-height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .image > img {
-width: 100%;
-height: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-btn {  
+  position: absolute;
+  top: 30px;
+  height: 200px;
+  border: none;
+  background: rgba(20,20,20,.5);
+  width: 4%;
+  padding: 0;
+}
+
+.right.carousel-btn {
+  right: -40px;
+}
+
+.left.carousel-btn {
+  left: -40px;
 }
