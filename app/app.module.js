@@ -1,1 +1,1 @@
-const app = angular.module("app", ['ui.bootstrap', 'ngRoute', 'ngCookies']);
+const app = angular.module("app", ['ui.bootstrap', 'ngRoute']);
