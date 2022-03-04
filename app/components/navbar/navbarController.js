@@ -17,5 +17,6 @@ app.controller('navbarController', ['$scope', '$rootScope', 'loginService', func
         let input = document.getElementById('searchInput');
         input.classList.toggle('show');
         input.parentElement.classList.toggle('search');
+        input.focus();
     }
 }]);

@@ -16,6 +16,17 @@ app.controller('carouselCtrl', ['dataService', '$scope', '$rootScope', function(
       const slideLeftBtn = angular.element(carousel.querySelector('.left'));  
       const slideRightBtn = angular.element(carousel.querySelector('.right')); 
 
+      
+      carousel.onmouseenter = () => {
+        slideLeftBtn[0].style.display = 'block';
+        slideRightBtn[0].style.display = 'block';
+      }
+
+      carousel.onmouseleave = () => {
+        slideLeftBtn[0].style.display = 'none';
+        slideRightBtn[0].style.display = 'none';
+      }
+
       let measures;
       slideLeftBtn[0].onclick = () => {
         measures = this.calcSliderMeasures(slider, items);

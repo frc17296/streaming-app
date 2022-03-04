@@ -1,10 +1,7 @@
-.films-cnt {
-  margin: 40px;
-}
-
 .carousel-cnt {  
   position: relative;
   margin-bottom: 50px;
+  padding: 0 40px;
 }
 
 .carousel-cnt > h3 {
@@ -35,6 +32,7 @@
 }
 
 .carousel-btn {  
+  display: none;
   position: absolute;
   top: 30px;
   height: 200px;
@@ -42,12 +40,14 @@
   background: rgba(20,20,20,.5);
   width: 4%;
   padding: 0;
+  outline: none !important;
+  border-radius: 5px
 }
 
 .right.carousel-btn {
-  right: -40px;
+  right: 0;
 }
 
 .left.carousel-btn {
-  left: -40px;
+  left: 0;
 }
