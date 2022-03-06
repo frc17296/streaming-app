@@ -68,23 +68,6 @@
   },
   {
       "imageurl": [
-          "https://m.media-amazon.com/images/M/MV5BNjg4MjRhZjgtNTIxOS00MmRjLTg4NTEtNjBkNzkwZjAxMjMyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX182_CR0,0,182,268_AL_.jpg"
-      ],
-      "genre": [
-          "Action",
-          "Horror",
-          "Thriller"
-      ],
-      "imdbid": "tt8244784",
-      "title": "The Hunt",
-      "imdbrating": 6.5,
-      "released": 2020,
-      "synopsis": "Twelve strangers wake up in a clearing. They don't know where they are, or how they got there. They don't know they've been chosen - for a very specific purpose - The Hunt.",
-      "type": "movie",
-      "$$hashKey": "object:13"
-  },
-  {
-      "imageurl": [
           "https://m.media-amazon.com/images/M/MV5BNzMyOWRjYjUtMjc2OC00MWUyLWEzODktYWZlZDYxYjk4MDViXkEyXkFqcGdeQXVyODE0OTU5Nzg@._V1_UX182_CR0,0,182,268_AL_.jpg"
       ],
       "genre": [
@@ -149,23 +132,6 @@
       "type": "movie",
       "synopsis": "A covert team of immortal mercenaries are suddenly exposed and must now fight to keep their identity a secret just as an unexpected new member is discovered.",
       "$$hashKey": "object:18"
-  },
-  {
-      "imageurl": [
-          "https://m.media-amazon.com/images/M/MV5BOTE3MzRkODctZjJmNi00NTI1LTk3NmItZTMxNzg2NWJkZDBiXkEyXkFqcGdeQXVyNjQyNjgwNjU@._V1_UX182_CR0,0,182,268_AL_.jpg"
-      ],
-      "genre": [
-          "Action",
-          "Horror",
-          "Sport"
-      ],
-      "imdbid": "tt7397552",
-      "title": "Adrenaline Rush",
-      "imdbrating": 7,
-      "released": 2020,
-      "type": "movie",
-      "synopsis": "",
-      "$$hashKey": "object:19"
   },
   {
       "imageurl": [
@@ -249,22 +215,6 @@
       "synopsis": "Fantasy adventure origin story about a young man discovering he has God-like powers based on ancient Norwegian mythology.",
       "type": "movie",
       "$$hashKey": "object:26"
-  },
-  {
-      "imageurl": [
-          "https://m.media-amazon.com/images/M/MV5BNGNhZTk5M2MtMzUzYy00NmZkLTljZmItZTU5MDU4Y2M0N2I4XkEyXkFqcGdeQXVyMjM1NTY3Njk@._V1_UX182_CR0,0,182,268_AL_.jpg"
-      ],
-      "genre": [
-          "Action",
-          "Horror"
-      ],
-      "imdbid": "tt5654204",
-      "title": "#Slaughterhouse",
-      "imdbrating": 6.9,
-      "released": 2020,
-      "type": "movie",
-      "synopsis": "A romantic spring getaway turns sinister when unexpected visitors join the party in a high-tech house that no one can escape.",
-      "$$hashKey": "object:27"
   },
   {
       "imageurl": [
@@ -448,23 +398,6 @@
       "type": "movie",
       "synopsis": "A genius, seventeen-year-old drug dealer/musician comes to realize that the 'victimless crime' of helping his friends get high has connected him with vicious mobsters and ruthless thieves. ...",
       "$$hashKey": "object:39"
-  },
-  {
-      "imageurl": [
-          "https://m.media-amazon.com/images/M/MV5BN2EzYzhlNjUtNjE5Ni00MzE1LWE2NDgtZDEwYjY5N2ZhNjQ0XkEyXkFqcGdeQXVyMTE4NzcwOTM4._V1_UY268_CR3,0,182,268_AL_.jpg"
-      ],
-      "genre": [
-          "Action",
-          "Comedy",
-          "Horror"
-      ],
-      "imdbid": "tt11890562",
-      "title": "Concrete shark",
-      "imdbrating": 7.8,
-      "released": 2020,
-      "type": "movie",
-      "synopsis": "The director of the concrete plant fell into the concrete mixer. The devil from hell turned him into a concrete shark. Save the world from another monster will locksmiths Michael and Azamat.",
-      "$$hashKey": "object:40"
   },
   {
       "imageurl": [

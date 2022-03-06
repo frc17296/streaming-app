@@ -5,11 +5,13 @@
   <div class="films-cnt mt-5">
     <div ng-repeat="el in filmsByGenre" ng-controller="carouselCtrl" class="carousel-cnt">
       <h3>{{el.genre}}</h3>      
-      <div class="slider">
-        <div ng-repeat="(key, film) in el.list" class="item">
-          <div class="image">
-            <img ng-src="{{film.imageurl[0]}}" alt="{{film.title}}" />
-          </div>
+      <div class="slider row align-items-center flex-nowrap">
+        <div ng-repeat="(key, film) in el.list" class="item col-sm-3 col-md-2">
+          <a ng-href="/#!/detail/{{film.title}}">
+            <div class="image">
+              <img ng-src="{{film.imageurl[0]}}" alt="{{film.title}}" />
+            </div>
+          </a>
         </div>
       </div>
       <button class="carousel-btn left">
