@@ -1,0 +1,21 @@
+.detail {
+  background-repeat: no-repeat;
+  /* background-position: center; */
+  background-size: cover;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 1em;
+}
+
+.info-keys > p {
+  font-weight: bold;
+}
+
+.info-keys > p, .info-values > p, .info-values > p span {
+  margin: 0;
+  font-size: 14px;
+  color: gray !important;
+}
+

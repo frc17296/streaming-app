@@ -64,5 +64,10 @@ app.service('dataService', ['$http', '$rootScope', function($http, $rootScope) {
         filmsByGenre.push(item);
       })
       return filmsByGenre;
+    };
+
+    this.getFilmByTitle = (title) => {
+      const films = $rootScope.films.slice();
+      return films.find(f => f.title === title);
     }
 }])
