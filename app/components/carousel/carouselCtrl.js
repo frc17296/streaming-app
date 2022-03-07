@@ -17,9 +17,10 @@ app.controller('carouselCtrl', ['dataService', '$scope', '$rootScope', function(
       const slideRightBtn = angular.element(carousel.querySelector('.right')); 
 
       
+      let measures;
       carousel.onmouseenter = () => {
-        slideLeftBtn[0].style.display = 'block';
-        slideRightBtn[0].style.display = 'block';
+        measures = this.calcSliderMeasures(slider, items);
+        toggleBtnVisibility(measures, slideLeftBtn[0], slideRightBtn[0]);
       }
 
       carousel.onmouseleave = () => {
@@ -27,21 +28,42 @@ app.controller('carouselCtrl', ['dataService', '$scope', '$rootScope', function(
         slideRightBtn[0].style.display = 'none';
       }
 
-      let measures;
       slideLeftBtn[0].onclick = () => {
         measures = this.calcSliderMeasures(slider, items);
         if(this.canScroll(measures, 'left')) {
-          slider.style.transform = `translate(${this.calcTranslation('right', slider)}px)`;       
+          slider.style.transform = `translate(${this.calcTranslation('right', slider)}px)`; 
+          setInterval(() => {
+            measures = this.calcSliderMeasures(slider, items);
+            toggleBtnVisibility(measures, slideLeftBtn[0], slideRightBtn[0]);
+          }, 100);
         }
       };
       slideRightBtn[0].onclick = () => {
         measures = this.calcSliderMeasures(slider, items);
         if(this.canScroll(measures, 'right')) {
-          slider.style.transform = `translate(${this.calcTranslation('left', slider)}px)`;       
+          slider.style.transform = `translate(${this.calcTranslation('left', slider)}px)`; 
+          setInterval(() => {
+            measures = this.calcSliderMeasures(slider, items);
+            toggleBtnVisibility(measures, slideLeftBtn[0], slideRightBtn[0]);
+          }, 100);
         }
       };
     });
   });  
+
+  toggleBtnVisibility = (measures, slideLeftBtn, slideRightBtn) => {
+    if(canScroll(measures, 'left')) {
+      slideLeftBtn.style.display = 'block';
+    } else {
+      slideLeftBtn.style.display = 'none';
+    } 
+
+    if(canScroll(measures, 'right')) {
+      slideRightBtn.style.display = 'block';
+    } else {
+      slideRightBtn.style.display = 'none';
+    }
+  }
 
   canScroll = (measures, direction) => {
     let xOffset = measures.xOffset > 0 ? measures.xOffset : measures.xOffset * (-1);        
@@ -64,7 +86,7 @@ app.controller('carouselCtrl', ['dataService', '$scope', '$rootScope', function(
         } else if (diff < this.movement && diff < 0) {
           this.movement = measures.maxXOffset;
         }
-        return (measures.maxXOffset - xOffset) > 0;
+        return (diff) > 0;
       }
     }
   }
