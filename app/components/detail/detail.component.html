@@ -2,26 +2,33 @@
     <div ng-include="'./app/components/navbar/navbar.component.html'" ng-controller="navbarController">
 </header>
 <main>
-    <div class="detail p-5">
-        <h1 class="pb-3 mx-0">{{filmTitle}}</h1>              
-        <p class="description col-6 p-0 mt-4">{{film.synopsis}}</p>
-        <div class="d-flex align-items-center mt-4 gray">
-            <div class="info-keys">
-                <p>Genere</p>
-                <p>Anno</p>
-                <p>IMDb</p>
+    <div class="container">
+        <div class="row">
+            <div class="detail py-5 px-0 my-5 col">
+                <h1 class="pb-3 mx-0">{{filmTitle}}</h1>              
+                <p class="description col-6 p-0 mt-4">{{film.synopsis}}</p>
+                <div class="d-flex align-items-center mt-4 gray">
+                    <div class="info-keys">
+                        <p>Genere</p>
+                        <p>Anno</p>
+                        <p>IMDb</p>
+                    </div>
+                    <div class="info-values mx-3">
+                        <p>
+                            <span ng-repeat="g in film.genre">{{g}}
+                                <span ng-if="film.genre.indexOf(g) < (film.genre.length-1)">-</span>
+                            <span>
+                        </p>
+                        <p>{{film.released}}</p>
+                        <p>{{film.imdbrating}}</p>
+                    </div>
+                </div>
+                <div ng-include="'./app/components/buttons/buttons.component.html'">
             </div>
-            <div class="info-values mx-3">
-                <p>
-                    <span ng-repeat="g in film.genre">{{g}}
-                        <span ng-if="film.genre.indexOf(g) < (film.genre.length-1)">-</span>
-                    <span>
-                </p>
-                <p>{{film.released}}</p>
-                <p>{{film.imdbrating}}</p>
+            <div class="col">
+                <img ng-src="{{film.imageurl}}}" alt="">
             </div>
         </div>
-        <div ng-include="'./app/components/buttons/buttons.component.html'">
     </div>
     
 </main>

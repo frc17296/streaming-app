@@ -2,7 +2,7 @@
   color: #fff;
 }
 
-main {
-  overflow: hidden;
+body {
+  overflow-x: hidden;
   background-color: #0f171e;
 }

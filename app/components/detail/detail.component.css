@@ -1,7 +1,7 @@
 .detail {
   background-repeat: no-repeat;
-  /* background-position: center; */
-  background-size: cover;
+  background-position-x: right;
+  background-size: contain;
 }
 
 .description {

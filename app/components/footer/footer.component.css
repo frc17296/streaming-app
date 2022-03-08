@@ -1,0 +1,32 @@
+.links-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-link {
+  pointer-events: none;  
+}
+
+.icons-link {  
+  margin-right: 10px;
+  width: 15%;
+  max-width: 40px;
+}
+
+.icons-link > span {
+  display: inline-block;
+  width: 100%;
+  padding: 0.5em;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  height: 80%;
+  
+}
+
+svg.social {
+  height: 100%;
+  width: 100%;
+  fill: #fff;
+}
+
