@@ -1,6 +1,6 @@
 app.controller("homeController", 
-    ["$rootScope", "$scope", "dataService", "filmService", "$location", "userService", "$filter",
-    function($rootScope, $scope, dataService, filmService, $location, userService){
+    ["$rootScope", "$scope", "dataService", "$location", "userService", "$filter",
+    function($rootScope, $scope, dataService, $location, userService){
         angular.element(document).ready(function() {
             dataService.getData();
         });                  

@@ -2,7 +2,7 @@ app.controller('loginController', [ '$scope', 'loginService', '$location', funct
     $scope.wrongCredentials;
     $scope.errorMsg = "Email o password errati, riprova!"
     $scope.formLoginInputs = {email: 'test@test.com', password: '1234'};
-    $scope.keepSigned = true;
+    $scope.keepSigned;
     $scope.login = function() {
         var keepSigned = $scope.keepSigned;        
         let user = loginService.login($scope.formLoginInputs);
