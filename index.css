@@ -2,7 +2,13 @@
   color: #fff;
 }
 
-main {
-  overflow: hidden;
+body {
+  overflow-x: hidden;
   background-color: #0f171e;
+}
+
+header {
+  background-image: linear-gradient(
+    180deg,#1b2530 0,rgba(27,37,48,.85)); 
+  padding: 10px 30px;
 }

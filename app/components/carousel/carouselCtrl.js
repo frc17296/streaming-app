@@ -1,4 +1,4 @@
-app.controller('carouselCtrl', ['dataService', '$scope', '$rootScope', function() {
+app.controller('carouselCtrl', function() {
   this.movement;
   this.sliderMargin = 40;
   angular.element(document).ready(function() {    
@@ -165,4 +165,4 @@ app.controller('carouselCtrl', ['dataService', '$scope', '$rootScope', function(
     }      
   };
     
-}]);
+});
