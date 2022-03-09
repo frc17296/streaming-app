@@ -23,9 +23,14 @@
   position: relative;
   width: 30px;
   height: 30px;
+  opacity: 0.85;
 }
 
 .icon-cnt > svg {
   position: absolute;
+}
+
+.icon-cnt:hover {
+  opacity: 1;
 }
 
