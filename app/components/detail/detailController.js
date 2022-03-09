@@ -8,7 +8,6 @@ app.controller('detailController', ['$scope', '$routeParams', 'dataService', 'us
 
     $scope.toggleDisplay = () => {
         const addFavIcons = angular.element(document.querySelectorAll('.add-fav'));
-        console.log(addFavIcons)
         addFavIcons[0].style.display = 'none';
         addFavIcons[1].style.display = 'block';
     };

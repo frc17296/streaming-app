@@ -19,7 +19,6 @@ app.service('userService', ['$rootScope', function($rootScope) {
             }
             let user = this.getUser(credentials);
             if(user && !user.favorites.find(f => f.title === film.title)) {
-                console.log(film)
                 user.favorites.push(film);
             }
         }
