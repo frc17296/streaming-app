@@ -34,3 +34,12 @@
   opacity: 1;
 }
 
+.show {
+  display: block;
+  opacity: 1;
+}
+
+.hide {
+  display: none;
+}
+

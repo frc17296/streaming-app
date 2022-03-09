@@ -4,6 +4,7 @@
 
 .film-fav {
   width: 20%;
+  height: fit-content;
   box-sizing: border-box;
   margin: 2% 2.5%;
   position: relative;

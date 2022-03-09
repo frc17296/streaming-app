@@ -11,7 +11,7 @@ app.service('userService', ['$rootScope', function($rootScope) {
         return this.users.find(u => u.email === credentials.email)
     }
 
-    this.addFavorite = function(film) {
+    this.addFavorite = (film) => {
         if(film) {
             let credentials = {
                 email: $rootScope.currentUser.email,
@@ -22,5 +22,14 @@ app.service('userService', ['$rootScope', function($rootScope) {
                 user.favorites.push(film);
             }
         }
+    };
+
+    this.isFavorites = (film) => {
+        let credentials = {
+            email: $rootScope.currentUser.email,
+            password: $rootScope.currentUser.password
+        }
+        let user = this.getUser(credentials);
+        return user && user.favorites.find(f => f.title === film.title);
     }
 }])

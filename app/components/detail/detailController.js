@@ -2,14 +2,11 @@ app.controller('detailController', ['$scope', '$routeParams', 'dataService', 'us
                 function($scope, $routeParams, dataService, userService) {
     $scope.filmTitle = $routeParams.title;   
     $scope.film = dataService.getFilmByTitle($scope.filmTitle);
+    $scope.isFav = () => {
+        return userService.isFavorites($scope.film);
+    }
     $scope.addToFav = () => {
         userService.addFavorite($scope.film);
-    };
-
-    $scope.toggleDisplay = () => {
-        const addFavIcons = angular.element(document.querySelectorAll('.add-fav'));
-        addFavIcons[0].style.display = 'none';
-        addFavIcons[1].style.display = 'block';
     };
 
     angular.element(document).ready(function() {

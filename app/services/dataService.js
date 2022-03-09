@@ -69,5 +69,5 @@ app.service('dataService', ['$http', '$rootScope', function($http, $rootScope) {
     this.getFilmByTitle = (title) => {
       const films = $rootScope.films.slice();
       return films.find(f => f.title === title);
-    }
+    };
 }])
