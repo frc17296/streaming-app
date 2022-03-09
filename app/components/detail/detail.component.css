@@ -19,3 +19,13 @@
   color: gray !important;
 }
 
+.icon-cnt {
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+
+.icon-cnt > svg {
+  position: absolute;
+}
+
