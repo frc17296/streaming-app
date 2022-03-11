@@ -58,6 +58,37 @@ nav {
     cursor: pointer;
 }
 
+.searchModal {
+    visibility: hidden;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    background: rgba(0,0,0,0.9);
+}
+
+.searchModal > form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#searchInputModal {
+    width: 100%;
+    margin: 30px !important;
+    padding: 0 0 10px 5px;
+    font-size: 22px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #fff;
+    color: #fff !important;
+    outline: none !important;
+    box-shadow: none;
+}
+ 
 
 @keyframes slideLeft {
     from {
