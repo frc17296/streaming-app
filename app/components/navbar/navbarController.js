@@ -1,4 +1,6 @@
-app.controller('navbarController', ['$scope', '$rootScope', 'loginService', function($scope, $rootScope, loginService) {
+app.controller('navbarController', ['$scope', '$rootScope', 'loginService', '$location',
+                function($scope, $rootScope, loginService, $location) {
+
     $scope.appTitle = "Streaming app";
     $scope.currentUser = $rootScope.currentUser;
     $scope.toggleSearchInput = () => {
@@ -22,10 +24,11 @@ app.controller('navbarController', ['$scope', '$rootScope', 'loginService', func
     };
 
     $scope.searchFunction = function(value) {
-        $rootScope.searchInput = value;
+        $scope.searchInput = value;
     };
 
     $scope.handleSubmit = function() {
+        $location.url('/search/'+$scope.searchInput);
         searchForm.reset();
         searchFormMobile.reset();
         $scope.toggleSearchInput();

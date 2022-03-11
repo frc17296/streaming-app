@@ -15,7 +15,11 @@ app.config(function($routeProvider) {
 		})
 		.when('/list', {
 			templateUrl: 'app/components/list/list.component.html',
-			controller: 'listaController'
+			controller: 'listController'
+		})
+		.when('/search/:input', {
+			templateUrl: 'app/components/search-res/search-res.component.html',
+			controller: 'searchResController'
 		})
 		.otherwise({
 			redirectTo: '/'

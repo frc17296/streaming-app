@@ -1,4 +1,4 @@
-app.controller('listaController', ['$scope', '$rootScope', function($scope, $rootScope) {
+app.controller('listController', ['$scope', '$rootScope', function($scope, $rootScope) {
     angular.element(document).ready(function() {
         const playBtnsObj = angular.element(document.querySelectorAll('.play-btn'));
         const playBtns = Object.values(playBtnsObj);

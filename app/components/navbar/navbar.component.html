@@ -3,13 +3,15 @@
     <div class="searchModal" ng-click="toggleSearchInput()">
       <form name="searchFormMobile" ng-submit="handleSubmit()" class="form-inline mx-3 my-lg-0">
         <input id="searchInputModal" class="form-control mr-sm-2 shadow-none" type="search" 
-        placeholder="Search" aria-label="Search" ng-model="searchValue.title" 
+        placeholder="Search" aria-label="Search" ng-model="searchValue" 
         ng-bind="searchFunction(searchValue)">
       </form> 
     </div>
     <div class="col p-0 d-flex align-items-center justify-content-end">
-      <form name="searchForm" id="searchForm" ng-submit="handleSubmit()" class="form-inline mx-3 my-lg-0">
-        <input id="searchInput" class="form-control mr-sm-2 shadow-none" type="search" placeholder="Search" aria-label="Search" ng-model="searchValue.title" ng-bind="searchFunction(searchValue)">
+      <form name="searchForm" id="searchForm" ng-submit="handleSubmit($event)" class="form-inline mx-3 my-lg-0">
+        <input  id="searchInput" class="form-control mr-sm-2 shadow-none" type="search" 
+                placeholder="Search" aria-label="Search" 
+                ng-model="searchValue" ng-bind="searchFunction(searchValue)">
         <div class="d-flex align-items-center justify-content-center">
           <i class="icon fas fa-search pr-1" style="font-size: 16px;" aria-hidden="true" ng-click="toggleSearchInput()"></i>
         </div>
