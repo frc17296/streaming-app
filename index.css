@@ -12,3 +12,9 @@ header {
     180deg,#1b2530 0,rgba(27,37,48,.85)); 
   padding: 10px 30px;
 }
+
+@media screen and (max-width: 780px) {
+  header {
+    padding: 10px 0;
+  }
+}

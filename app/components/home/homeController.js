@@ -1,25 +1,13 @@
 app.controller("homeController", 
-    ["$rootScope", "$scope", "dataService", "$location", "userService", "$filter",
-    function($rootScope, $scope, dataService, $location, userService){
+    ["$scope", "dataService", "$location", 
+    function($scope, dataService, $location) { 
         angular.element(document).ready(function() {
             dataService.getData();
         });                  
         
         $scope.detail = function(title) {           
             $location.url('/detail/'+title);
-        }
-
-        $scope.getFilmsByGenre = (g) => {
-           return dataService.getFilmsByGenre(g);
-        }        
-
-        $scope.addFavorite = function(title) {
-            console.log('adding : ' + title + ' to favorite')
-            let titleWrapper = {
-                title: title
-            }
-            userService.addFavorite(titleWrapper);
-        }
+        } 
 
         $scope.fillRatingIcon = function(event) {
             

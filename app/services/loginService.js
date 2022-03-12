@@ -20,7 +20,6 @@ app.service('loginService', ['$rootScope', '$location', 'userService',  function
     }
 
     this.logout = function() {
-        console.log('loggin out ...')
         this.clearCurrentUser();
         localStorage.removeItem("user");
         $location.url('/login');
@@ -40,6 +39,5 @@ app.service('loginService', ['$rootScope', '$location', 'userService',  function
             password: password
         }        
         localStorage.setItem("user", JSON.stringify(loggedUser));
-        console.log(JSON.stringify(loggedUser));
     }
 }])

@@ -29,3 +29,17 @@
   visibility: hidden;
   transition: visibility 0.1s ease-in-out;
 }
+
+@media screen and (max-width: 780px) {
+  .film-fav {
+    width: 30%;
+    margin: 1.5%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .film-fav {
+    width: 45%;
+    margin: 2% 2.5%;
+  }
+}
