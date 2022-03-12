@@ -2,12 +2,12 @@
     <div ng-include="'./app/components/navbar/navbar.component.html'" ng-controller="navbarController">
 </header>
 <main>
-    <div class="container">
-        <div class="row">
-            <div class="detail py-5 px-0 my-5 col">
+    <div class="detail p-0">
+        <div class="background col-12 p-0">
+            <div class="detail-cnt py-5 px-0 my-5 col">
                 <h1 class="pb-3 mx-0">{{filmTitle}}</h1>              
-                <p class="description col-6 p-0 mt-4">{{film.synopsis}}</p>
-                <div class="d-flex align-items-center mt-4 gray">
+                <p class="description col-sm-6 p-0 mt-4">{{film.synopsis}}</p>
+                <div class="d-flex align-items-center col-12 p-0 mt-4 gray">
                     <div class="info-keys">
                         <p>Genere</p>
                         <p>Anno</p>
@@ -32,9 +32,9 @@
                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 172 172" style=" fill:#000000;left:6px;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#cccccc"><path d="M32.25,9.40625v143.27734l8.27246,-5.24902l103.80469,-66.38965zM43,29.0166l81.42285,52.02832l-81.42285,51.98632z"></path></g></g></svg>  
                     </span>
                 </div>
-            </div>
-            <div class="col">
-                <img ng-src="{{film.imageurl}}}" alt="">
+                <div class="col">
+                    <img ng-src="{{film.imageurl[0]}}}" alt="">
+                </div>
             </div>
         </div>
     </div>

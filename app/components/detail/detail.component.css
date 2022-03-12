@@ -1,7 +1,12 @@
 .detail {
+  margin: 0 40px;
+}
+
+.background {
   background-repeat: no-repeat;
   background-position-x: right;
-  background-size: contain;
+  background-size: contain; 
+  height: 80vh; 
 }
 
 .description {
@@ -43,3 +48,8 @@
   display: none;
 }
 
+@media screen and (max-width: 780px) {
+  .detail {
+    margin: 0 10px;
+  }
+}

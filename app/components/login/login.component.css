@@ -1,20 +1,23 @@
-html {
-    height: 100vh;
-}
-
 #loginFormContainer {
-    width: 25%;
     background-color: #fff;
     color: gray;
     margin: 0 auto;
     font-size: 16px;
 }
 
-#background {
+#login {
     height: 100vh;
-    width: 100vw;
+}
+
+#background {    
     display: flex;
     align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 input[type=email], input[type=password] {
