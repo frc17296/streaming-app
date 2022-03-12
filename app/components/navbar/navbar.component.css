@@ -1,19 +1,25 @@
 nav {
-    height: 100px;
-    position: sticky!important    
+    background-color: transparent !important;
+    border-radius: unset !important;
+    margin: 0 !important;
+}
+
+.nav-title {
+    font-size: 24px;
+    color: #fff !important;
+    text-decoration: none !important;
 }
 
 .nav-link {
     font-size: 14px;
+    color: #fff !important;
 }
 
-.navbar-brand {
-    font-size: 20px;
-}
 
 .dropdown-toggle {
     cursor: pointer;
     font-size: 18px;
+    color: #495057;
 }
 
 .dropdown-menu {
@@ -23,17 +29,21 @@ nav {
 .dropdown-menu > li > a {
     cursor: pointer;
     font-size: 12px;
+    color: #000 !important;
 }
 
 #searchForm.search {
-    background: #fff;
-    border: 1px solid #ced4da;
+    background-color: #fff;
 }
 
 #searchInput {
     display: none;
     border: none;
     font-size: 16px;
+}
+
+#searchInput:focus {
+    box-shadow:none !important;
 }
 
 #searchInput.show {
@@ -43,11 +53,42 @@ nav {
 }
 
 .icon {
-    margin: 0 5px;
+    margin: 0;
     color: #495057;
     cursor: pointer;
 }
 
+.searchModal {
+    visibility: hidden;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    background: rgba(0,0,0,0.9);
+}
+
+.searchModal > form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#searchInputModal {
+    width: 100%;
+    margin: 30px !important;
+    padding: 0 0 10px 5px;
+    font-size: 22px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #fff;
+    color: #fff !important;
+    outline: none !important;
+    box-shadow: none;
+}
+ 
 
 @keyframes slideLeft {
     from {

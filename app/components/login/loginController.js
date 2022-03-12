@@ -1,11 +1,10 @@
 app.controller('loginController', [ '$scope', 'loginService', '$location', function($scope, loginService, $location) {
     $scope.wrongCredentials;
     $scope.errorMsg = "Email o password errati, riprova!"
-    $scope.formLoginInputs = {email: '', password: ''};
+    $scope.formLoginInputs = {email: 'test@test.com', password: '1234'};
     $scope.keepSigned;
     $scope.login = function() {
-        var keepSigned = $scope.keepSigned;
-        loginForm.reset();
+        var keepSigned = $scope.keepSigned;        
         let user = loginService.login($scope.formLoginInputs);
         if(user) {
             $scope.wrongCredentials = false;
@@ -18,5 +17,6 @@ app.controller('loginController', [ '$scope', 'loginService', '$location', funct
         else {
             $scope.wrongCredentials = true
         }
+        loginForm.reset();
     }
 }])

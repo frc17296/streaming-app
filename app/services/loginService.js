@@ -1,18 +1,4 @@
-app.service('loginService', ['$rootScope', '$cookieStore', '$location', 'userService',  function($rootScope, $cookieStore, $location, userService) {
-    const users = [{
-        id:1,
-        nickname: 'Test',
-        email: 'test@gmail.com',
-        password: '1234',
-        list: [
-            {
-                title: "Howl's moving castle"
-            },
-            {
-                title: "Porco rosso"
-            }
-        ]
-    }];
+app.service('loginService', ['$rootScope', '$location', 'userService',  function($rootScope, $location, userService) {
 
     this.isAuthenticated = function() {
         var credentials = localStorage.getItem("user");
@@ -35,7 +21,6 @@ app.service('loginService', ['$rootScope', '$cookieStore', '$location', 'userSer
 
     this.logout = function() {
         console.log('loggin out ...')
-        this.clearCookie();
         this.clearCurrentUser();
         localStorage.removeItem("user");
         $location.url('/login');
@@ -53,13 +38,8 @@ app.service('loginService', ['$rootScope', '$cookieStore', '$location', 'userSer
         let loggedUser = {
             email: email,
             password: password
-        }
-        $cookieStore.put('loggedUser', loggedUser);
+        }        
         localStorage.setItem("user", JSON.stringify(loggedUser));
         console.log(JSON.stringify(loggedUser));
-    }
-
-    this.clearCookie = function() {
-        $cookieStore.remove('loggedUser');
     }
 }])

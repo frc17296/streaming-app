@@ -1,0 +1,45 @@
+.detail {
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-size: contain;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 1em;
+}
+
+.info-keys > p {
+  font-weight: bold;
+}
+
+.info-keys > p, .info-values > p, .info-values > p span {
+  margin: 0;
+  font-size: 14px;
+  color: gray !important;
+}
+
+.icon-cnt {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  opacity: 0.85;
+}
+
+.icon-cnt > svg {
+  position: absolute;
+}
+
+.icon-cnt:hover {
+  opacity: 1;
+}
+
+.show {
+  display: block;
+  opacity: 1;
+}
+
+.hide {
+  display: none;
+}
+

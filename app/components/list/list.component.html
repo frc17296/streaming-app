@@ -2,8 +2,19 @@
     <div ng-include="'./app/components/navbar/navbar.component.html'" ng-controller="navbarController" >
 </header>
 <main>
-    <h4 class="m-5">My list</h4>
-    <div ng-repeat="film in currentUser.favorites" class="container">
-        {{film.title}}
+    <h2 class="p-5 ml-3">La mia lista</h2>
+    <div class="container list-cnt d-flex flex-wrap px-0">
+        <div ng-repeat="film in currentUser.favorites" class="film-fav">
+            <a ng-href="/#!/detail/{{film.title}}">
+                <div class="img-cnt">
+                    <img ng-src="{{film.imageurl[0]}}" alt="" class="w-100">
+                </div>
+                <div class="btn play-btn">
+                    <span class="icon-cnt d-flex justify-content-center">  
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 172 172" style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#fff"><path d="M32.25,9.40625v143.27734l8.27246,-5.24902l103.80469,-66.38965zM43,29.0166l81.42285,52.02832l-81.42285,51.98632z"></path></g></g></svg>  
+                    </span>
+                </div>
+            </a>
+        </div>
     </div>
 </main>
