@@ -1,5 +1,0 @@
-<div ng-repeat="element in data | orderBy:sortorder">
-    <div>{{element.name | uppercase }}</div>
-    <div>{{element.price | number:2 | currency: '€'}}</div>
-    <button ng-click="openModal(element)">Elimina</button>
-</div>

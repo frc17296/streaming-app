@@ -24,6 +24,20 @@ app.service('userService', ['$rootScope', function($rootScope) {
         }
     };
 
+    this.removeFavorite = (film) => {
+        if(film) {
+            let credentials = {
+                email: $rootScope.currentUser.email,
+                password: $rootScope.currentUser.password
+            }
+            let user = this.getUser(credentials);
+            if(user) {
+                let index = user.favorites.findIndex(f => f.title === film.title);
+                user.favorites.splice(index, 1);
+            }
+        }
+    }
+
     this.isFavorites = (film) => {
         let credentials = {
             email: $rootScope.currentUser.email,
