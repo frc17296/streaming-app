@@ -19,14 +19,6 @@
   padding: 2px;
 }
 
-.item:hover {
-  transform: scale(1.25);
-  z-index: 1;
-  box-sizing: border-box;
-  transition: transform 0.4s ease-in-out;
-  box-shadow: inset 0 0 0 3px #fff; 
-}
-
 .image {
   width: 100%;
   height: 100%;
@@ -56,4 +48,25 @@
 
 .left.carousel-btn {
   left: 0;
+}
+
+@media screen and (max-width: 780px) {
+  .carousel-btn {
+    display: block;
+    width: 10%;
+  }
+
+  .carousel-cnt {
+    padding: 0 10px;
+  }
+}
+
+@media screen and (min-width: 780px) {
+  .item:hover {
+    transform: scale(1.25);
+    z-index: 1;
+    box-sizing: border-box;
+    transition: transform 0.4s ease-in-out;
+    box-shadow: inset 0 0 0 3px #fff; 
+  }
 }

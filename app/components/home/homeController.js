@@ -7,7 +7,7 @@ app.controller("homeController",
         
         $scope.goToDetail = function(title) { 
             $location.url('/detail/'+title);
-        } 
+        };        
 
         $scope.fillRatingIcon = function(event) {
             

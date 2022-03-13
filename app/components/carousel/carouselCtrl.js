@@ -1,6 +1,11 @@
-app.controller('carouselCtrl', function() {
+app.controller('carouselCtrl', ['$scope', function($scope) {
+
+  $scope.isDesktop = () => {
+    return window.innerWidth>780;
+  };
+
   this.movement;
-  this.sliderMargin = 40;
+  this.sliderMargin = $scope.isDesktop() ? 40 : 10;
   angular.element(document).ready(function() {    
     const sliderObj = angular.element(document.querySelectorAll('.slider')); 
     const sliders = Object.values(sliderObj);
@@ -18,15 +23,22 @@ app.controller('carouselCtrl', function() {
 
       
       let measures;
-      carousel.onmouseenter = () => {
+      /* i want to show buttons on mouseover
+         for mobile view i can't so i will show them automatically
+      */
+      if(!$scope.isDesktop()) {
         measures = this.calcSliderMeasures(slider, items);
         toggleBtnVisibility(measures, slideLeftBtn[0], slideRightBtn[0]);
-      }
-
-      carousel.onmouseleave = () => {
-        slideLeftBtn[0].style.display = 'none';
-        slideRightBtn[0].style.display = 'none';
-      }
+      } else {
+        carousel.onmouseenter = () => {
+          measures = this.calcSliderMeasures(slider, items);
+          toggleBtnVisibility(measures, slideLeftBtn[0], slideRightBtn[0]);
+        }  
+        carousel.onmouseleave = () => {
+          slideLeftBtn[0].style.display = 'none';
+          slideRightBtn[0].style.display = 'none';
+        };            
+      }           
 
       slideLeftBtn[0].onclick = () => {
         measures = this.calcSliderMeasures(slider, items);
@@ -70,14 +82,14 @@ app.controller('carouselCtrl', function() {
 
     switch(direction) {
       case 'left': {   
-        if(measures.xOffset >= 40) {
+        if(measures.xOffset >= this.sliderMargin) {
           return false;
         }
         if((xOffset - this.movement) < 0) {
-          this.movement = (xOffset + 40);
+          this.movement = (xOffset + this.sliderMargin);
           return true;
         }
-        return (measures.xOffset + this.movement) <= 40;
+        return (measures.xOffset + this.movement) <= this.sliderMargin;
       }
       case 'right': {
         let diff = (measures.maxXOffset - xOffset - this.sliderMargin);
@@ -165,4 +177,4 @@ app.controller('carouselCtrl', function() {
     }      
   };
     
-});
+}]);
