@@ -1,4 +1,4 @@
-app.controller('listController', function() {
+app.controller('listController', ['$scope', '$location', function($scope, $location) {
     angular.element(document).ready(function() {
         const playBtnsObj = angular.element(document.querySelectorAll('.play-btn'));
         const playBtns = Object.values(playBtnsObj);
@@ -13,4 +13,8 @@ app.controller('listController', function() {
             }
         })
     }); 
-});
+
+    $scope.goToDetail = function(title) {                  
+        $location.url('/detail/'+title);
+    } 
+}]);

@@ -5,7 +5,7 @@
     <h2 class="p-3 py-5 p-md-5 ml-md-3">La mia lista</h2>
     <div class="container list-cnt d-flex flex-wrap px-0">
         <div ng-repeat="film in currentUser.favorites" class="film-fav">
-            <a ng-href="/#!/detail/{{film.title}}">
+            <a ng-click="goToDetail(film.title)">
                 <div class="img-cnt">
                     <img ng-src="{{film.imageurl[0]}}" alt="" class="w-100">
                 </div>
