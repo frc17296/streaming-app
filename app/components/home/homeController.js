@@ -5,7 +5,8 @@ app.controller("homeController",
             dataService.getData();
         });                  
         
-        $scope.detail = function(title) {           
+        $scope.goToDetail = function(title) {  
+            console.log(title)         
             $location.url('/detail/'+title);
         } 
 
