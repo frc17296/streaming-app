@@ -1,12 +1,12 @@
-app.controller('navbarController', ['$scope', '$rootScope', 'loginService', '$location',
-                function($scope, $rootScope, loginService, $location) {
+app.controller('navbarController', ['$scope', '$location',
+                function($scope, $location) {
 
-    $scope.appTitle = "Streaming app";
-    $scope.currentUser = $rootScope.currentUser;
+    $scope.appTitle = "Streaming app";    
+
     $scope.toggleSearchInput = () => {
-        const winWidth = window.innerWidth;
+        
         let input;
-        if(winWidth < 700) {
+        if(!isDesktop()) {
             let searchModal = angular.element(document.querySelector('.searchModal'))[0];
             let modalStyle = searchModal.style;
             modalStyle.visibility = modalStyle.visibility == 'hidden' ? 'visible' : 'hidden';
@@ -32,9 +32,5 @@ app.controller('navbarController', ['$scope', '$rootScope', 'loginService', '$lo
         searchForm.reset();
         searchFormMobile.reset();
         $scope.toggleSearchInput();
-    };
-
-    $scope.logout = function() {
-        loginService.logout();
     };
 }]);

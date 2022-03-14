@@ -11,31 +11,24 @@
        
     <!-- Router -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28//angular-route.min.js"></script>
-    <!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-route.js"></script> -->
-    
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-route.js"></script> -->    
     
     <!-- Config -->
     <script src="./app/app.module.js"></script>
     <script src="./app/app.route.js"></script>
-    <script src="./app/config/runConfig.js"></script>
 
     <!-- Controllers -->
     <script src="./app/components/navbar/navbarController.js"></script>
     <script src="./app/components/home/homeController.js"></script>   
-    <script src="./app/components/modal/modalCtrl.js"></script>        
-    <script src="./app/components/detail/detailController.js"></script>     
-    <script src="./app/components/list/listController.js"></script>
-    <script src="./app/components/login/loginController.js"></script>
+    <script src="./app/components/detail/detailController.js"></script>   
     <script src="./app/components/carousel/carouselCtrl.js"></script>
     <script src="./app/components/search-res/searchResController.js"></script>
+    <script src="./shared/utils.js"></script>
 
     <!-- Services -->
     <script src="./app/services/dataService.js"></script>
-    <script src="./app/services/userService.js"></script>
-    <script src="./app/services/loginService.js"></script>
     
     <!-- HTML -->    
-    <script src="./app/components/modal/modal.html"></script>
     <script src="./app/components/navbar/navbar.component.html"></script>
 
     <!-- CSS -->
@@ -46,11 +39,9 @@
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="./app/components/home/home.component.css">
     <link rel="stylesheet" href="./app/components/navbar/navbar.component.css">
-    <link rel="stylesheet" href="./app/components/login/login.component.css">
     <link rel="stylesheet" href="./app/components/carousel/carousel.component.css">  
     <link rel="stylesheet" href="./app/components/detail/detail.component.css">
     <link rel="stylesheet" href="./app/components/footer/footer.component.css">
-    <link rel="stylesheet" href="./app/components/list/list.component.css">
   </head>
   <body>
     <ng-view></ng-view>  

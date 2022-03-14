@@ -1,20 +1,9 @@
-app.controller('detailController', ['$scope', '$routeParams', 'dataService', 'userService',
-                function($scope, $routeParams, dataService, userService) {
+app.controller('detailController', ['$scope', '$routeParams', 'dataService',
+                function($scope, $routeParams, dataService) {
     $scope.filmTitle = $routeParams.title;   
     $scope.film = dataService.getFilmByTitle($scope.filmTitle);
-    $scope.isFav = () => {
-        return userService.isFavorites($scope.film);
-    }
-    $scope.addToFav = () => {
-        userService.addFavorite($scope.film);
-    };
-
-    $scope.remFromFav = () => { 
-        userService.removeFavorite($scope.film);
-        const removeSvg = angular.element(document.querySelector('#rem-fav'));
-        removeSvg[0].classList.remove('show');
-        removeSvg[0].classList.add('hide');
-    }
+    
+    
 
     angular.element(document).ready(function() {
         const background = angular.element(document.querySelector('.background'));
@@ -23,6 +12,23 @@ app.controller('detailController', ['$scope', '$routeParams', 'dataService', 'us
         const iconCnt = angular.element(document.querySelector('.icon-cnt'));
         const checkSvg = angular.element(document.querySelector('#is-fav'));
         const removeSvg = angular.element(document.querySelector('#rem-fav'));
+        const addSvg = angular.element(document.querySelector('#add-fav'));
+
+        $scope.addToFav = () => {
+            checkSvg[0].classList.remove('hide');
+            checkSvg[0].classList.add('show');
+            addSvg[0].classList.add('hide');
+        };
+    
+        $scope.remFromFav = () => { 
+            removeSvg[0].classList.remove('show');
+            removeSvg[0].classList.add('hide');
+            addSvg[0].classList.add('show');
+        }
+
+        $scope.isFav = () => {
+            return checkSvg[0].classList.value.includes('show');
+        }
 
         iconCnt[0].onmouseenter = () => {
             if($scope.isFav()) {   

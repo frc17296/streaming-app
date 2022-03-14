@@ -1,11 +1,7 @@
-app.controller('carouselCtrl', ['$scope', function($scope) {
-
-  $scope.isDesktop = () => {
-    return window.innerWidth>780;
-  };
+app.controller('carouselCtrl', [function() {
 
   this.movement;
-  this.sliderMargin = $scope.isDesktop() ? 40 : 10;
+  this.sliderMargin = isDesktop() ? 40 : 10;
   angular.element(document).ready(function() {    
     const sliderObj = angular.element(document.querySelectorAll('.slider')); 
     const sliders = Object.values(sliderObj);
@@ -26,7 +22,7 @@ app.controller('carouselCtrl', ['$scope', function($scope) {
       /* i want to show buttons on mouseover
          for mobile view i can't so i will show them automatically
       */
-      if(!$scope.isDesktop()) {
+      if(!isDesktop()) {     
         measures = this.calcSliderMeasures(slider, items);
         toggleBtnVisibility(measures, slideLeftBtn[0], slideRightBtn[0]);
       } else {

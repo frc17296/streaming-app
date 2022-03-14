@@ -2,7 +2,7 @@
   <div ng-include="'./app/components/navbar/navbar.component.html'" ng-controller="navbarController">
 </header>
 <main>
-  <h2 class="p-5 ml-3">Risultati per <em>{{searchInput}}</em></h2>
+  <h2 class="my-5 p-md-5 ml-3">Risultati per <em>{{searchInput}}</em></h2>
   <div class="container list-cnt d-flex flex-wrap px-0">
       <div ng-repeat="film in films | filter: searchInput" class="film-fav item">
           <a ng-href="/#!/detail/{{film.title}}">
