@@ -16,6 +16,10 @@ header {
   padding: 10px 30px;
 }
 
+footer {
+  height: 130px;
+}
+
 @media screen and (max-width: 780px) {
   header {
     padding: 10px 0;

@@ -3,7 +3,7 @@
 </header>
 <main>
   <h2 class="my-5 p-md-5 ml-3">Risultati per <em>{{searchInput}}</em></h2>
-  <div class="container list-cnt d-flex flex-wrap px-0">
+  <div class="container list-cnt d-flex flex-wrap px-0" style="height: calc(100vh - 130px);">
       <div ng-repeat="film in films | filter: searchInput" class="film-fav item">
           <a ng-href="/#!/detail/{{film.title}}">
               <div class="img-cnt">

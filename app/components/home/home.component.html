@@ -4,7 +4,7 @@
 <main>
   <div class="films-cnt mt-5">
     <div ng-repeat="el in filmsByGenre" ng-controller="carouselCtrl" class="carousel-cnt">
-      <h3>{{el.genre}}</h3>      
+      <h3 class="mb-3">{{el.genre}}</h3>      
       <div class="slider row align-items-center flex-nowrap">
         <div ng-repeat="(key, film) in el.list" class="item col-6 col-sm-4 col-md-3 col-lg-2">
           <a ng-click="goToDetail(film.title)">

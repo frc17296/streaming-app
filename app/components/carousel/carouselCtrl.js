@@ -22,7 +22,7 @@ app.controller('carouselCtrl', [function() {
       /* i want to show buttons on mouseover
          for mobile view i can't so i will show them automatically
       */
-      if(!isDesktop()) {     
+      if(!isDesktop()) {    
         measures = this.calcSliderMeasures(slider, items);
         toggleBtnVisibility(measures, slideLeftBtn[0], slideRightBtn[0]);
       } else {
