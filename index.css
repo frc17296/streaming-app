@@ -2,9 +2,12 @@
   color: #fff;
 }
 
-body {
-  overflow-x: hidden;
+body {  
   background-color: #0f171e;
+}
+
+main {
+  overflow-x: hidden;
 }
 
 header {
